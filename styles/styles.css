@@ -33,21 +33,72 @@ a:hover {
   color: var(--gold);
 }
 
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-size: inherit;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .container {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-.header {
+.title {
+  position: relative;
+  font-family: "Merriweather";
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 80px;
+  color: var(--gold);
+  text-align: center;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.title::before,
+.title:after {
+  content: "";
+  position: absolute;
+  width: 330px;
+  height: 2px;
+  background: var(--gold);
+  display: block;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.title::before {
+  left: calc(100% + 20px);
+}
+
+.title::after {
+  right: calc(100% + 20px);
+}
+
+.header-container {
   height: 90px;
   padding-top: 20px;
   display: flex;
   align-items: center;
   width: 100%;
-  background: url("../assets/images/bg.jpg");
+  background-image: url("../assets/images/bg.jpg");
   background-repeat: no-repeat;
   background-position: center 0;
+  padding: 0 20px;
 }
 
 .nav {
@@ -77,8 +128,277 @@ a:hover {
   font-size: 20px;
   line-height: 50px;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .language-item.active {
   color: var(--gold);
+}
+
+.hero-container {
+  background-image: url("../assets/images/bg.jpg");
+  background-position: center -90px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 0 20px;
+  height: 820px;
+}
+
+.section-hero__content {
+  padding-top: 160px;
+  margin-left: 60px;
+  max-width: 500px;
+}
+
+.section-hero__title {
+  font-family: "Merriweather";
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 120px;
+}
+
+.section-hero__description {
+  font-size: 20px;
+  line-height: 40px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.section-hero__button {
+  background: var(--gold);
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 40px;
+  color: var(--black);
+  padding: 8px 72px 7px 73px;
+}
+
+.section-hero__button:hover {
+  color: var(--white);
+}
+
+.section:not(.section-hero):not(.contacts-section) {
+  padding-top: 100px;
+}
+
+.section-skills__list {
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: center;
+}
+
+.section-skills__item {
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.section-skills__item-title {
+  margin: 50px 0 20px 0;
+  font-size: 20px;
+  line-height: 40px;
+  font-weight: 700;
+}
+
+.section-skills__item-description {
+  font-size: 18px;
+  line-height: 36px;
+}
+
+.section-portfolio__tabs {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  justify-content: center;
+  margin: 60px 0;
+}
+
+.section-portfolio__tab {
+  border: 1px solid var(--gold);
+  width: 220px;
+  height: 55px;
+  line-height: 55px;
+  font-size: 20px;
+  text-align: center;
+  color: var(--gold);
+  cursor: pointer;
+}
+
+.section-portfolio__tab.active {
+  background: var(--gold);
+  color: var(--black);
+}
+
+.section-portfolio__tab:not(.active):hover {
+  color: var(--white);
+}
+
+.section-portfolio__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.section-portfolio__item {
+  width: 450px;
+  height: 560px;
+}
+
+.section-video__content {
+  background: url(../assets/images/video-player.jpg) no-repeat center/cover;
+  width: 100%;
+  position: relative;
+  height: 705px;
+}
+
+.section-video__play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.section-video__play-btn:hover path {
+  fill: var(--gold);
+}
+
+.section-price__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+.section-price__item {
+  border: 3px solid var(--gold);
+  text-align: center;
+  width: 450px;
+  height: 505px;
+  padding: 43px 0;
+}
+
+.section-price__item-title {
+  font-family: "Merriweather";
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 56px;
+}
+
+.section-price__item-price {
+  font-family: "Merriweather";
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 48px;
+  margin: 20px 0;
+  color: var(--gold);
+}
+
+.section-price__item-description ul li {
+  font-size: 18px;
+  line-height: 36px;
+}
+
+.section-price__item-button button {
+  background: var(--gold);
+  font-size: 20px;
+  line-height: 40px;
+  border: none;
+  color: var(--black);
+  margin-top: 40px;
+  cursor: pointer;
+  padding: 8px 39px 7px 39px;
+}
+
+.section-price__item-button button:hover {
+  color: var(--white);
+}
+
+.contacts-section {
+  background: url(../assets/images/contacts.jpg) no-repeat center/cover;
+  height: 700px;
+  padding-top: 60px;
+  margin-top: 100px;
+}
+
+.section-contacts__title {
+  font-family: "Merriweather";
+  font-weight: 700;
+  font-size: 40px;
+  color: var(--gold);
+  line-height: 80px;
+}
+
+.section-contacts__form form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.section-contacts__form form input,
+.section-contacts__form form textarea {
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  font-size: 20px;
+  outline: none;
+  line-height: 40px;
+  padding: 5px 20px;
+}
+
+.section-contacts__form form textarea {
+  height: 100px;
+}
+
+.section-contacts__form form input::placeholder {
+  color: var(--gold);
+}
+
+.section-contacts__content {
+  width: 450px;
+  margin-left: auto;
+}
+
+.section-contacts__form button {
+  width: 220px;
+  height: 55px;
+  background: var(--gold);
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 40px;
+  color: var(--black);
+}
+
+.section-contacts__form button:hover {
+  color: var(--white);
+}
+
+.footer-container {
+  font-size: 20px;
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 0;
+}
+
+.year {
+  margin: 0 20px;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.socials a:hover path {
+  fill: var(--gold);
 }
